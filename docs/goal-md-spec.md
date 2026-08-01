@@ -10,6 +10,7 @@ An executable goal:
 
 - contains the final outcome, not only the next step
 - includes paths, references, assumptions, and constraints
+- defines the execution harness: runtime, tools, dependency setup, permissions, secrets, services, readiness checks, and fallbacks
 - decomposes work into milestones with acceptance criteria
 - defines a repeatable agent work loop
 - tells agents how to validate work
@@ -33,6 +34,7 @@ For project work, use:
 - `progress/worklog.md`
 - `progress/validation.md`
 - `progress/decisions.md`
+- `progress/harness.md`
 
 For research or writing work, use equivalents such as:
 
@@ -42,3 +44,18 @@ For research or writing work, use equivalents such as:
 
 The exact filenames can change, but `goal.md` must define them.
 
+## Harness Readiness
+
+Every serious `goal.md` should tell future agents how to verify the environment before doing the main work:
+
+- required OS/shell assumptions
+- working directory
+- language runtimes and versions
+- package managers and install commands
+- browsers, CLIs, plugins, MCP servers, or local apps
+- required env vars or external services, without secret values
+- permissions and approval boundaries
+- baseline readiness commands
+- fallback behavior when optional or required pieces are missing
+
+The goal should prevent agents from stopping just because one optional tool is absent. It should also prevent agents from pretending an unverified environment is ready.

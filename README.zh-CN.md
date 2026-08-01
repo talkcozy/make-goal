@@ -71,6 +71,7 @@ cp packages/claude-code/commands/make-goal.md .claude/commands/make-goal.md
 - 可执行
 - 可验证
 - 可长期恢复
+- 明确执行 harness：运行环境、工具、依赖、权限、密钥、外部服务、就绪检查和降级方案
 - 明确完成定义
 - 明确 agent 工作循环
 - 明确进度记录方式
@@ -79,4 +80,3 @@ cp packages/claude-code/commands/make-goal.md .claude/commands/make-goal.md
 ## 许可证
 
 MIT
-

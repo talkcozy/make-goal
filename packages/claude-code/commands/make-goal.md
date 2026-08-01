@@ -17,6 +17,7 @@ User request:
    - references to inspect
    - scope and assumptions
    - constraints
+   - execution harness and environment: runtime, tools, dependency setup, permissions, secrets, external services, readiness checks, fallbacks
    - deliverables
    - milestones with acceptance criteria
    - agent work loop
@@ -29,4 +30,3 @@ User request:
 6. Verify the file exists after writing and summarize the result.
 
 Do not complete the underlying project unless the user explicitly asks. Your job is to create the durable goal document.
-

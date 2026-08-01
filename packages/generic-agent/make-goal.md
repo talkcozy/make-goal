@@ -10,6 +10,7 @@ Use this instruction when a user wants a long-running AI agent to complete a com
    - output path
    - references to inspect
    - executor agent/tooling
+   - execution harness: runtime, tools, dependency setup, permissions, credentials, services, baseline checks, fallbacks
    - constraints
    - definition of done
    - validation method
@@ -26,6 +27,7 @@ Use this instruction when a user wants a long-running AI agent to complete a com
 - References to Inspect
 - Scope
 - Constraints
+- Execution Harness and Environment
 - Deliverables
 - Milestones with Acceptance Criteria
 - Agent Work Loop
@@ -37,5 +39,4 @@ Use this instruction when a user wants a long-running AI agent to complete a com
 
 ## Key Rule
 
-A plan is not enough. The `goal.md` must tell future agents exactly how to resume, choose work, implement, verify, record progress, handle blockers, and know when the goal is complete.
-
+A plan is not enough. The `goal.md` must tell future agents exactly how to check and bootstrap the environment, resume, choose work, implement, verify, record progress, handle blockers, and know when the goal is complete.

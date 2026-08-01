@@ -11,6 +11,7 @@ Most long AI tasks fail because the "plan" lives in chat history. `make-goal` mo
 - final objective
 - background and references
 - constraints and assumptions
+- execution harness: runtime, tools, dependencies, permissions, secrets, services, readiness checks, fallbacks
 - milestones with acceptance criteria
 - repeatable agent work loop
 - validation plan
@@ -99,6 +100,8 @@ Before writing `goal.md`, the agent should ask for missing critical context:
 - Where should `goal.md` be saved?
 - What existing files, repos, examples, or links should be inspected?
 - Which agent or humans will execute it?
+- What runtime, tools, package managers, plugins, credentials, services, and permissions will the agent need?
+- What should the agent do if a required harness piece is missing?
 - What constraints matter?
 - What counts as done?
 - How should work be validated?
