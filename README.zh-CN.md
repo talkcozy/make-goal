@@ -4,6 +4,8 @@
 
 它不是针对某一个项目的专用 prompt，而是一套通用工作流：先向用户提问补齐上下文，再把目标、约束、里程碑、验证方式、进度记录和阻塞规则写进一个持久化文件，让其他 AI agent 可以进入 goal 模式长期执行。
 
+官网：[talkcozy.github.io/make-goal](https://talkcozy.github.io/make-goal/)
+
 ## 适用场景
 
 - 重构软件项目

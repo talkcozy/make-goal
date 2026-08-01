@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="make-goal turns complex objectives into executable goal.md files for long-running AI agents."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <title>make-goal | Executable goal.md for AI agents</title>
+    <link rel="preload" as="image" href="./assets/make-goal-blueprint.jpg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-elevated="false">
+      <a class="brand" href="#top" aria-label="make-goal home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>make-goal</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#anatomy">Anatomy</a>
+        <a href="#harness">Harness</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/talkcozy/make-goal">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-bg"
+          src="./assets/make-goal-blueprint.jpg"
+          alt="A generated illustration of goal.md becoming an executable agent blueprint"
+        />
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Open-source skill for agentic work</p>
+          <h1 id="hero-title">make-goal</h1>
+          <p class="hero-subtitle">
+            Turn messy long-running work into self-contained goals with harness checks, validation, and progress logs.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#install">Install</a>
+            <a class="button secondary" href="https://github.com/talkcozy/make-goal">View repo</a>
+          </div>
+        </div>
+        <div class="hero-strip" aria-label="Supported agent surfaces">
+          <span>Codex skill</span>
+          <span>Claude Code command</span>
+          <span>Generic agent prompt</span>
+        </div>
+      </section>
+
+      <section class="section intro" aria-labelledby="intro-title">
+        <div class="section-inner intro-grid">
+          <h2 id="intro-title">A goal is not a plan. It is a durable handoff contract.</h2>
+          <p>
+            <code>make-goal</code> asks the missing questions, inspects the context, and writes a <code>goal.md</code>
+            that future agents can execute without depending on the original chat.
+          </p>
+        </div>
+      </section>
+
+      <section class="section anatomy" id="anatomy" aria-labelledby="anatomy-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2 id="anatomy-title">What goes into a real goal.md</h2>
+            <p>
+              The document captures the target, the work loop, and the checks that keep a long task from drifting.
+            </p>
+          </div>
+          <div class="timeline" aria-label="goal.md components">
+            <article>
+              <span class="step">01</span>
+              <h3>Context</h3>
+              <p>Final outcome, references, paths, constraints, assumptions, and non-goals.</p>
+            </article>
+            <article>
+              <span class="step">02</span>
+              <h3>Harness</h3>
+              <p>Runtime, tools, dependency setup, permissions, secrets, services, and fallbacks.</p>
+            </article>
+            <article>
+              <span class="step">03</span>
+              <h3>Milestones</h3>
+              <p>Phased work with acceptance criteria, quality bars, and completion definition.</p>
+            </article>
+            <article>
+              <span class="step">04</span>
+              <h3>Loop</h3>
+              <p>Read progress, inspect state, implement a small increment, validate, record, continue.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section harness" id="harness" aria-labelledby="harness-title">
+        <div class="section-inner harness-grid">
+          <div>
+            <h2 id="harness-title">Harness first, so agents do not stall later.</h2>
+            <p>
+              Many agent tasks fail after the goal is clear because the execution environment is not.
+              <code>make-goal</code> makes the harness explicit before the work starts.
+            </p>
+            <ul class="check-list">
+              <li>Runtimes, package managers, browsers, CLIs, MCP servers, and plugins</li>
+              <li>Secrets and external services documented by variable name, never by value</li>
+              <li>Baseline readiness checks and fallback paths when dependencies are missing</li>
+            </ul>
+          </div>
+          <figure class="illustration-frame">
+            <img
+              src="./assets/harness-readiness.jpg"
+              alt="A generated illustration of environment readiness blocks feeding into a central validation gate"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section bilingual" aria-labelledby="bilingual-title">
+        <div class="section-inner bilingual-grid">
+          <div>
+            <h2 id="bilingual-title">Built for multiple agents</h2>
+            <p>
+              One shared method, packaged for different execution surfaces. 中文和英文模板一起维护。
+            </p>
+          </div>
+          <div class="agent-list">
+            <a href="https://github.com/talkcozy/make-goal/tree/main/packages/codex/skills/make-goal">
+              <span>Codex</span>
+              <strong>Skill package with references and metadata</strong>
+            </a>
+            <a href="https://github.com/talkcozy/make-goal/tree/main/packages/claude-code/commands">
+              <span>Claude Code</span>
+              <strong>Slash command prompts in English and Chinese</strong>
+            </a>
+            <a href="https://github.com/talkcozy/make-goal/tree/main/packages/generic-agent">
+              <span>Any agent</span>
+              <strong>Portable instruction files for custom harnesses</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section install" id="install" aria-labelledby="install-title">
+        <div class="section-inner">
+          <div class="section-heading install-heading">
+            <h2 id="install-title">Install where your agents work</h2>
+            <p>
+              No build step. Copy the prompt, symlink the skill, or drop the command into a project.
+            </p>
+          </div>
+
+          <div class="tabs" data-tabs>
+            <div class="tab-buttons" role="tablist" aria-label="Install commands">
+              <button class="tab-button" id="tab-codex" role="tab" aria-controls="panel-codex" aria-selected="true">
+                Codex
+              </button>
+              <button class="tab-button" id="tab-claude" role="tab" aria-controls="panel-claude" aria-selected="false">
+                Claude Code
+              </button>
+              <button class="tab-button" id="tab-generic" role="tab" aria-controls="panel-generic" aria-selected="false">
+                Generic
+              </button>
+            </div>
+            <div class="tab-panels">
+              <section class="tab-panel active" id="panel-codex" role="tabpanel" aria-labelledby="tab-codex">
+                <pre><code>bash scripts/install-codex.sh</code></pre>
+                <p>Then ask Codex: <span>Use $make-goal to turn this project into a goal.md.</span></p>
+              </section>
+              <section class="tab-panel" id="panel-claude" role="tabpanel" aria-labelledby="tab-claude" hidden>
+                <pre><code>bash scripts/install-claude-code.sh</code></pre>
+                <p>Then use: <span>/make-goal Create a long-running goal for this repo.</span></p>
+              </section>
+              <section class="tab-panel" id="panel-generic" role="tabpanel" aria-labelledby="tab-generic" hidden>
+                <pre><code>packages/generic-agent/make-goal.md</code></pre>
+                <p>Paste the portable instruction into any agent's project or system context.</p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section questions" aria-labelledby="questions-title">
+        <div class="section-inner question-layout">
+          <h2 id="questions-title">It asks before it writes.</h2>
+          <div class="question-columns">
+            <p>What should exist when this is done?</p>
+            <p>What files or repos should the agent inspect?</p>
+            <p>What harness does the agent need?</p>
+            <p>What proves the work is complete?</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section-inner footer-inner">
+        <span>make-goal is MIT licensed by TalkCozy.</span>
+        <a href="https://github.com/talkcozy/make-goal">github.com/talkcozy/make-goal</a>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

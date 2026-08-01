@@ -4,6 +4,8 @@
 
 **make-goal** 可以把一个复杂目标整理成可执行的 `goal.md`，让 Codex、Claude Code 或其他 AI agent 能够读取、拆解、验证、记录进度，并长期循环完成任务。
 
+Website: [talkcozy.github.io/make-goal](https://talkcozy.github.io/make-goal/)
+
 ## Why
 
 Most long AI tasks fail because the "plan" lives in chat history. `make-goal` moves the important context into a durable file:
