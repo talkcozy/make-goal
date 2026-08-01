@@ -4,6 +4,8 @@
 
 **make-goal** 可以把一个复杂目标整理成可执行的 `goal.md`，让 Codex、Claude Code 或其他 AI agent 能够读取、拆解、验证、记录进度，并长期循环完成任务。
 
+**你必须非常努力，才会看起来毫不费力。** `make-goal` puts the effort up front so future agents can run the goal smoothly later.
+
 Website: [talkcozy.github.io/make-goal](https://talkcozy.github.io/make-goal/)
 
 ## Why
