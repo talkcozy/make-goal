@@ -1,0 +1,4 @@
+interface:
+  display_name: "Make Goal"
+  short_description: "Turn complex work into executable goal.md"
+  default_prompt: "Use $make-goal to turn my long-running project idea into an executable goal.md."
