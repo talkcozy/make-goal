@@ -5,11 +5,10 @@
   --line: rgba(11, 13, 12, 0.13);
   --paper: #f6f7f4;
   --paper-strong: #ffffff;
-  --emerald: #00a86b;
-  --emerald-dark: #007a4f;
-  --cobalt: #1769ff;
-  --shadow: 0 28px 80px rgba(11, 13, 12, 0.14);
-  --radius: 18px;
+  --emerald: #12935f;
+  --emerald-dark: #096b45;
+  --shadow: 0 24px 64px rgba(11, 13, 12, 0.11);
+  --radius: 8px;
   font-family:
     ui-sans-serif,
     system-ui,
@@ -36,7 +35,7 @@ body {
 }
 
 body::selection {
-  background: rgba(0, 168, 107, 0.24);
+  background: rgba(18, 147, 95, 0.24);
 }
 
 a {
@@ -47,6 +46,15 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+.header-sentinel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
 }
 
 .site-header {
@@ -87,13 +95,39 @@ img {
 }
 
 .brand-mark {
-  width: 18px;
-  height: 18px;
-  border-radius: 6px;
-  background:
-    linear-gradient(135deg, var(--emerald), var(--cobalt)),
-    var(--emerald);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28) inset;
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  color: currentColor;
+}
+
+.brand-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.brand-mark path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mark-sheet,
+.mark-fold {
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+
+.mark-prompt,
+.mark-rule {
+  stroke: #98f0bd;
+  stroke-width: 2;
+}
+
+.site-header[data-elevated="true"] .mark-prompt,
+.site-header[data-elevated="true"] .mark-rule {
+  stroke: var(--emerald-dark);
 }
 
 .nav-links {
@@ -408,7 +442,7 @@ code {
   height: 12px;
   border-radius: 50%;
   background: var(--emerald);
-  box-shadow: 0 0 0 4px rgba(0, 168, 107, 0.12);
+  box-shadow: 0 0 0 4px rgba(18, 147, 95, 0.12);
 }
 
 .illustration-frame {
@@ -475,24 +509,25 @@ code {
 .tabs {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(11, 13, 12, 0.16);
   border-radius: var(--radius);
   overflow: hidden;
-  background: #f8f9f6;
-  box-shadow: 0 18px 54px rgba(11, 13, 12, 0.08);
+  background: #fbfcfa;
+  box-shadow: 0 18px 48px rgba(11, 13, 12, 0.07);
 }
 
 .tab-buttons {
   display: grid;
   align-content: start;
-  background: #eef2ec;
-  border-right: 1px solid var(--line);
+  background: #f0f3ef;
+  border-right: 1px solid rgba(11, 13, 12, 0.16);
 }
 
 .tab-button {
+  position: relative;
   appearance: none;
   border: 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(11, 13, 12, 0.12);
   background: transparent;
   color: var(--muted);
   min-height: 64px;
@@ -503,15 +538,28 @@ code {
   cursor: pointer;
 }
 
+.tab-button:hover {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.58);
+}
+
 .tab-button[aria-selected="true"] {
   color: var(--ink);
-  background: white;
+  background: #fbfcfa;
+}
+
+.tab-button[aria-selected="true"]::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--emerald-dark);
 }
 
 .tab-button:focus-visible,
 .button:focus-visible,
 a:focus-visible {
-  outline: 3px solid rgba(23, 105, 255, 0.42);
+  outline: 3px solid rgba(18, 147, 95, 0.34);
   outline-offset: 3px;
 }
 
@@ -523,11 +571,18 @@ a:focus-visible {
 .tab-panel pre {
   margin: 0;
   overflow-x: auto;
-  border-radius: 14px;
-  background: #0b0d0c;
+  border: 1px solid rgba(237, 247, 239, 0.14);
+  border-radius: var(--radius);
+  background: #111612;
   color: #effcf4;
   padding: 22px;
   font-size: 15px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.tab-panel pre code {
+  color: inherit;
+  font-size: inherit;
 }
 
 .tab-panel p {
@@ -617,7 +672,7 @@ a:focus-visible {
   .tab-buttons {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     border-right: 0;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(11, 13, 12, 0.16);
   }
 
   .tab-button {
@@ -625,6 +680,13 @@ a:focus-visible {
     text-align: center;
     padding: 0 10px;
     font-size: 14px;
+  }
+
+  .tab-button[aria-selected="true"]::before {
+    inset: auto 12px 0;
+    width: auto;
+    height: 3px;
+    border-radius: 999px 999px 0 0;
   }
 }
 

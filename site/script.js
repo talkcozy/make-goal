@@ -1,13 +1,25 @@
 const header = document.querySelector(".site-header");
 const tabs = document.querySelector("[data-tabs]");
 
-const updateHeader = () => {
-  if (!header) return;
-  header.dataset.elevated = window.scrollY > 24 ? "true" : "false";
-};
+if (header && location.hash && location.hash !== "#top") {
+  header.dataset.elevated = "true";
+}
 
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
+if (header && "IntersectionObserver" in window) {
+  const headerSentinel = document.createElement("span");
+  headerSentinel.setAttribute("aria-hidden", "true");
+  headerSentinel.className = "header-sentinel";
+  document.body.prepend(headerSentinel);
+
+  const headerObserver = new IntersectionObserver(
+    ([entry]) => {
+      header.dataset.elevated = entry.isIntersecting ? "false" : "true";
+    },
+    { rootMargin: "24px 0px 0px 0px" },
+  );
+
+  headerObserver.observe(headerSentinel);
+}
 
 if (tabs) {
   const buttons = [...tabs.querySelectorAll(".tab-button")];
