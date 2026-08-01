@@ -1,3 +1,9 @@
+<p align="right">
+  <strong>Language:</strong>
+  <a href="./README.md">English</a> |
+  <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
 # make-goal
 
 **make-goal** turns an ambiguous or complex objective into an executable `goal.md` that AI agents can read, execute, validate, and continue across long-running sessions.

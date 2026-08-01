@@ -1,3 +1,9 @@
+<p align="right">
+  <strong>语言 / Language:</strong>
+  <a href="./README.zh-CN.md">简体中文</a> |
+  <a href="./README.md">English</a>
+</p>
+
 # make-goal
 
 **make-goal** 是一个通用 AI agent skill，用来把复杂目标整理成可执行的 `goal.md`。
