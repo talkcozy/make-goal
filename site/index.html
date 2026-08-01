@@ -161,12 +161,13 @@
           <div class="section-heading install-heading">
             <h2 id="install-title">Install where your agents work</h2>
             <p>
-              No build step. Copy the prompt, symlink the skill, or drop the command into a project.
+              Copy one prompt into your agent. It should read the repository, install the right package, verify it,
+              and then run make-goal.
             </p>
           </div>
 
           <div class="tabs" data-tabs>
-            <div class="tab-buttons" role="tablist" aria-label="Install commands">
+            <div class="tab-buttons" role="tablist" aria-label="Agent install prompts">
               <button class="tab-button" id="tab-codex" role="tab" aria-controls="panel-codex" aria-selected="true">
                 Codex
               </button>
@@ -179,16 +180,16 @@
             </div>
             <div class="tab-panels">
               <section class="tab-panel active" id="panel-codex" role="tabpanel" aria-labelledby="tab-codex">
-                <pre><code>bash scripts/install-codex.sh</code></pre>
-                <p>Then ask Codex: <span>Use $make-goal to turn this project into a goal.md.</span></p>
+                <pre><code>Open https://github.com/talkcozy/make-goal. Read the repo, install make-goal for this Codex environment, verify the skill is available, then use $make-goal to create a goal.md for this project.</code></pre>
+                <p>The agent can inspect or clone the repo as needed. <span>You should not have to download it first.</span></p>
               </section>
               <section class="tab-panel" id="panel-claude" role="tabpanel" aria-labelledby="tab-claude" hidden>
-                <pre><code>bash scripts/install-claude-code.sh</code></pre>
-                <p>Then use: <span>/make-goal Create a long-running goal for this repo.</span></p>
+                <pre><code>Open https://github.com/talkcozy/make-goal. Read the repo, install make-goal for this Claude Code environment, verify /make-goal is available, then use it to create a goal.md for this project.</code></pre>
+                <p>Claude should handle file placement and report the invocation once it is installed.</p>
               </section>
               <section class="tab-panel" id="panel-generic" role="tabpanel" aria-labelledby="tab-generic" hidden>
-                <pre><code>packages/generic-agent/make-goal.md</code></pre>
-                <p>Paste the portable instruction into any agent's project or system context.</p>
+                <pre><code>Open https://github.com/talkcozy/make-goal. Read the repo, adapt the generic agent instructions for this environment, verify how I should invoke make-goal, then use it to create a goal.md for this project.</code></pre>
+                <p>For agents without a plugin system, it can embed the portable prompt into project instructions.</p>
               </section>
             </div>
           </div>

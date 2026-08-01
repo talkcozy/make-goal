@@ -34,38 +34,29 @@ make-goal/
     goal-md-spec.md
 ```
 
-## Codex 安装
+## 让 agent 自己安装
 
-```bash
-mkdir -p ~/.codex/skills
-ln -s "$(pwd)/packages/codex/skills/make-goal" ~/.codex/skills/make-goal
-```
+一般不需要你先下载这个仓库。把下面对应的一段话复制给 agent，让 agent 自己读取 GitHub 仓库、安装正确的包，并验证结果。
 
-使用方式：
+### Codex
 
 ```text
-Use $make-goal 帮我把这个长期项目整理成 goal.md。
+请打开 https://github.com/talkcozy/make-goal，先阅读仓库，把 make-goal 安装到当前 Codex 环境中，验证 skill 可用，然后使用 $make-goal 帮我把当前项目整理成 goal.md。
 ```
 
-## Claude Code 安装
-
-```bash
-mkdir -p .claude/commands
-cp packages/claude-code/commands/make-goal.md .claude/commands/make-goal.md
-```
-
-使用方式：
+### Claude Code
 
 ```text
-/make-goal 帮我把这个项目整理成可长期执行的 goal.md。
+请打开 https://github.com/talkcozy/make-goal，先阅读仓库，把 make-goal 安装到当前 Claude Code 环境中，验证 /make-goal 可用，然后用它帮我把当前项目整理成可长期执行的 goal.md。
 ```
 
-## 其他 AI Agent
+### 其他 AI Agent
 
-把下面任意一个文件复制到 agent 的项目指令或系统指令中：
+```text
+请打开 https://github.com/talkcozy/make-goal，先阅读仓库，根据通用 agent 指令适配当前环境，验证我应该如何调用 make-goal，然后用它帮我把当前项目整理成 goal.md。
+```
 
-- `packages/generic-agent/make-goal.md`
-- `packages/generic-agent/make-goal.zh-CN.md`
+`scripts/` 下的辅助脚本仍然保留，适合已经在 clone 后仓库里的 agent 或高级用户使用，但它不再是默认入口。
 
 ## 核心原则
 

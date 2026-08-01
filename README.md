@@ -41,60 +41,29 @@ make-goal/
   examples/
 ```
 
-## Install for Codex
+## Install with Your Agent
 
-Copy or symlink the Codex skill into your Codex skills directory:
+You usually do not need to clone this repository yourself. Copy the matching prompt into the agent that should use `make-goal`, and let the agent read the repository, install the right package, and verify the result.
 
-```bash
-mkdir -p ~/.codex/skills
-ln -s "$(pwd)/packages/codex/skills/make-goal" ~/.codex/skills/make-goal
-```
-
-Or run:
-
-```bash
-bash scripts/install-codex.sh
-```
-
-Then invoke it in Codex:
+### Codex
 
 ```text
-Use $make-goal to turn this project idea into a goal.md.
+Open https://github.com/talkcozy/make-goal. Read the repo, install make-goal for this Codex environment, verify the skill is available, then use $make-goal to create a goal.md for this project.
 ```
 
-## Install for Claude Code
-
-Copy the command file into a project or user-level Claude command directory:
-
-```bash
-mkdir -p .claude/commands
-cp packages/claude-code/commands/make-goal.md .claude/commands/make-goal.md
-```
-
-Or run:
-
-```bash
-bash scripts/install-claude-code.sh
-```
-
-Then use:
+### Claude Code
 
 ```text
-/make-goal Create a goal.md for refactoring this repo into a modular architecture.
+Open https://github.com/talkcozy/make-goal. Read the repo, install make-goal for this Claude Code environment, verify /make-goal is available, then use it to create a goal.md for this project.
 ```
 
-中文命令模板也在：
+### Any Agent
 
 ```text
-packages/claude-code/commands/make-goal.zh-CN.md
+Open https://github.com/talkcozy/make-goal. Read the repo, adapt the generic agent instructions for this environment, verify how I should invoke make-goal, then use it to create a goal.md for this project.
 ```
 
-## Use with Any Agent
-
-Paste one of these files into your agent's system/project instructions:
-
-- `packages/generic-agent/make-goal.md`
-- `packages/generic-agent/make-goal.zh-CN.md`
+The helper scripts under `scripts/` still exist for agents or users already working from a cloned checkout, but they are not the primary onboarding path.
 
 ## What the Skill Should Ask
 
