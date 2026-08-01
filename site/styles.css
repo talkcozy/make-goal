@@ -177,7 +177,7 @@ img {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: min(700px, 92vw);
+  max-width: min(960px, calc(100vw - 36px));
   color: white;
 }
 
@@ -192,9 +192,11 @@ img {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(64px, 12vw, 164px);
-  line-height: 0.88;
+  font-size: clamp(64px, 10.4vw, 148px);
+  line-height: 0.92;
   letter-spacing: 0;
+  white-space: nowrap;
+  word-break: normal;
 }
 
 .hero-subtitle {
@@ -506,6 +508,11 @@ code {
   margin-bottom: 38px;
 }
 
+.install-heading h2 {
+  font-size: clamp(40px, 5vw, 68px);
+  white-space: nowrap;
+}
+
 .tabs {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
@@ -720,7 +727,7 @@ a:focus-visible {
   }
 
   .hero h1 {
-    font-size: clamp(58px, 18vw, 92px);
+    font-size: clamp(48px, 14.6vw, 60px);
   }
 
   .hero-strip {
@@ -771,6 +778,11 @@ a:focus-visible {
     white-space: pre-wrap;
     overflow-wrap: break-word;
     font-size: 14px;
+  }
+
+  .install-heading h2 {
+    font-size: clamp(34px, 8vw, 44px);
+    white-space: normal;
   }
 }
 
